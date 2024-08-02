@@ -45,7 +45,7 @@ const deleteBook = async (request, response) => {
     })
 
     if(livro){
-        await prisma.livro.delete({
+        await prisma.livros.delete({
             where: { id: id_livro }
         })
         response.status(204).send()

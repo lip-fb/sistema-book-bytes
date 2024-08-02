@@ -21,15 +21,25 @@ router.put(("/livros/:id"), bookController.updateBook)
 router.delete(("/livros/:id"), bookController.deleteBook)
 
 // Para operações relacionadas a trocas
-
+router.get(("/trocas"), tradeController.getAllTrades)
+router.post(("/trocas"), tradeController.createTrade)
+router.put(("/trocas/:id"), tradeController.updateTrade)
+router.delete(("/trocas/:id"), tradeController.deleteTrade)
 
 // Para operações relacionadas ao histórico de transações
-
+router.get(("/historicoTransacoes"), transactionHistoryController.getAllTransactions)
+router.post(("/historicoTransacoes"), transactionHistoryController.createTransaction)
+router.put(("/historicoTransacoes/:id"), transactionHistoryController.updateTransaction)
+router.delete(("/historicoTransacoes/:id"), transactionHistoryController.deleteTransaction)
 
 // Para operações relacionadas a avaliações
-
+router.get(("/avaliacoes"), reviewController.getAllReviews)
+router.post(("/avaliacoes"), reviewController.createReview)
+router.put(("/avaliacoes/:id"), reviewController.updateReview)
+router.delete(("/avaliacoes/:id"), reviewController.deleteReview)
 
 // Para operações relacionadas a mensagens de chat
-
+router.get(("/mensagenschat"), chatController.getAllMessages)
+router.post(("/mensagenschat"), chatController.createMessage)
 
 module.exports = router
