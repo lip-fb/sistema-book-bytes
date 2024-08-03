@@ -5,6 +5,7 @@ const tradeController = require('../controller/tradeController')
 const transactionHistoryController = require('../controller/transactionHistoryController')
 const reviewController = require('../controller/reviewController')
 const chatController = require('../controller/chatController')
+const authController = require('../controller/auth/authController')
 
 const router = Router()
 
@@ -13,6 +14,9 @@ router.get(("/usuarios"), userController.getAllUsers)
 router.post(("/usuarios"), userController.createUser)
 router.put(("/usuarios/:id"), userController.updateUser)
 router.delete(("/usuarios/:id"), userController.deleteUser)
+
+// Operação do Login
+router.post("/login", authController.login)
 
 // Para operações relacionadas a livros
 router.get(("/livros"), bookController.getAllBooks) 
